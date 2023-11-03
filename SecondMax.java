@@ -40,7 +40,7 @@ public class SecondMax {
             }
         }
 
-        System.out.println(secMax);
+        // System.out.println(secMax);
         return secMax;
     }
 
