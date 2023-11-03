@@ -12,8 +12,11 @@ public class Two_sum {
             map.put(nums[i], i);
         }
 
+        System.out.println(map);
+
         for(int i = 0; i < nums.length; i++) {
             int substraction = target - nums[i];
+            System.out.println(map.get(substraction));
             if(map.containsKey(substraction) && map.get(substraction) != i) {
                 System.out.println(i + " " + map.get(substraction));
                 return new int[]{i,map.get(substraction)};
@@ -40,8 +43,8 @@ public class Two_sum {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 4,8,0};
-        int target = 4;
+        int[] arr = { 4,8,9,3,1,2,4};
+        int target = 8;
 
         // int[] ans = bruteForce_twoSum(arr, target);
 

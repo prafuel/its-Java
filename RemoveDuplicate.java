@@ -22,10 +22,6 @@ public class RemoveDuplicate {
         }
         Arrays.sort(nums);
 
-        for(int it : nums) {
-            System.out.print(" |" + it + "| ");
-        }
-
         System.out.println(set.size());
     }
     public static void main(String[] args) {
