@@ -60,13 +60,10 @@ public class RemoveZero {
             System.out.println("Not a single ZERO found");
             return arr;
         }
-
-    
-        if (arr[right] == 0 && arr[left] != 0) {
-            int temp = arr[right];
-            arr[right] = arr[left];
-            arr[left] = temp;
-        }
+        
+        int temp = arr[right];
+        arr[right] = arr[left];
+        arr[left] = temp;
 
         System.out.println("left : " + left + " " + "right : " + right);
         return arr;
@@ -74,7 +71,7 @@ public class RemoveZero {
 
     public static void main(String args[]) {
         // int[] arr = { 1, 4, 5, 0, 0, 5, 60, 0, 4, 5, 0 , 0 ,1};
-        int[] arr = { 0, 0, 0, 0, 0, 0, 3, 4, 5, 6, 5, 0, 0, 4, 5, 6, 7, 0, 0, 0, 9};
+        int[] arr = { 0, 0, 0, 0, 0, 0, 3, 4, 5, 6, 5, 0, 0, 4, 5, 6, 7, 0, 0, 0, 9 };
 
         // arr = bruteForce(arr);
 
