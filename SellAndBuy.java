@@ -7,13 +7,11 @@ public class SellAndBuy {
         return y;
     }
 
-    public static int minimum(int min, int arr[], int n) {
-        for(int i = 0; i < n; i++) {
-            if(min > arr[i]) {
-                min = arr[i];
-            }
+    public static int mini(int x, int y) {
+        if(x > y) {
+            return y;
         }
-        return min;
+        return x;
     }
 
     public static void main(String args[]) {
@@ -24,13 +22,9 @@ public class SellAndBuy {
         int min = stocks[0];
 
         for(int i = 1; i < stocks.length; i++) {
-            int prev = profit;
-
-            int cost = stocks[i] - min;
-            profit = max(prev,cost);
-            min = minimum(min,stocks,i);
-
-            // System.out.println("i = " + i + " prev = " + prev + " profit = " + profit + " min = " + min + " cost = " + cost + " stock[i] = " + stocks[i]);
+            profit = max(profit, stocks[i] - min);
+            min = mini(min, stocks[i]);
+            // System.out.println("i = " + i + " profit = " + profit + " min = " + min + " stock[i] = " + stocks[i]);
         }
 
         System.out.println("Maximum Profit is : " + profit);
