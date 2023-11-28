@@ -4,24 +4,20 @@ import java.util.Map;
 
 public class Two_sum {
 
-    public static int[] better(int[] nums, int target) {
+    public static int[] better(int[] arr, int target) {
+        int n = arr.length;
+
         Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+        for(int i = 0; i < n; i++) {
+            map.put(arr[i],i);
+        }   
 
-        // Add element into hashmap
-        for(int i = 0; i < nums.length; i++) {
-            map.put(nums[i], i);
-        }
 
-        System.out.println(map);
-
-        for(int i = 0; i < nums.length; i++) {
-            int substraction = target - nums[i];
-            System.out.println(map.get(substraction));
-            if(map.containsKey(substraction) && map.get(substraction) != i) {
-                System.out.println(i + " " + map.get(substraction));
-                return new int[]{i,map.get(substraction)};
+        for(int i = 0; i < n; i++) {
+            int sub = target - arr[i];
+            if(map.containsKey(sub) && map.get(sub) != i) {
+                return new int[]{i,map.get(sub)};
             }
-
         }
         return new int[]{-1,-1};
     }
@@ -47,12 +43,11 @@ public class Two_sum {
         int target = 8;
 
         // int[] ans = bruteForce_twoSum(arr, target);
+        int[] ans = better(arr, target);
+        // System.out.println(ans);
+        for(int i : ans){
+        System.out.println(i);
+        }
 
-        // // System.out.println(ans);
-        // for(int i : ans){
-        // System.out.println(i);
-        // }
-
-        better(arr, target);
     }
 }
