@@ -7,19 +7,18 @@ public class Two_sum {
     public static int[] better(int[] arr, int target) {
         int n = arr.length;
 
-        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
-        for(int i = 0; i < n; i++) {
-            map.put(arr[i],i);
-        }   
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < n; i++) {
+            map.put(arr[i], i);
+        }
 
-
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             int sub = target - arr[i];
-            if(map.containsKey(sub) && map.get(sub) != i) {
-                return new int[]{i,map.get(sub)};
+            if (map.containsKey(sub) && map.get(sub) != i) {
+                return new int[] { i, map.get(sub) };
             }
         }
-        return new int[]{-1,-1};
+        return new int[] { -1, -1 };
     }
 
     public static int[] bruteForce_twoSum(int[] nums, int target) {
@@ -39,14 +38,14 @@ public class Two_sum {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 4,8,9,3,1,2,4};
+        int[] arr = { 4, 8, 9, 3, 1, 2, 4 };
         int target = 8;
 
         // int[] ans = bruteForce_twoSum(arr, target);
         int[] ans = better(arr, target);
         // System.out.println(ans);
-        for(int i : ans){
-        System.out.println(i);
+        for (int i : ans) {
+            System.out.println(i);
         }
 
     }
