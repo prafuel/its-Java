@@ -51,6 +51,8 @@ public class MajorityElement {
                 maxCount = map.get(item);
             }
         }
+        // in map, keys are in sorted order
+        System.out.println(map);
 
         return maxKey;
     }
@@ -59,7 +61,5 @@ public class MajorityElement {
         int[] arr = { 3, 2, 3 , 4, 4, 4, 4, 4};
         System.out.println(bruteForce(arr));
         System.out.println(better(arr));
-
-        better(arr);
     }
 }
