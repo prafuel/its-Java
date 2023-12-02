@@ -46,20 +46,16 @@ public class MaxSumSubArray {
 
     public static int optimal(int[] arr) {
         int n = arr.length;
-
-        int maxi = Integer.MIN_VALUE;
+        
+        int maxi = arr[0];
         int sum = 0;
-
-        for (int i = 0; i < n; i++) {
-            sum = sum + arr[i];
-
-            if (maxi < sum) {
-                maxi = sum;
-            }
-
-            if(sum < 0) {
+        for(int i = 0; i < n; i++) {
+            sum += arr[i];
+            if(sum < 0){
                 sum = 0;
             }
+
+            maxi = max(sum,maxi);
         }
         return maxi;
     }
