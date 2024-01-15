@@ -41,7 +41,7 @@ public class RemoveZero {
         int right = n - 1;
 
         if (left != -1) {
-            while (left <= right) {
+            while (left < right) {
                 if (arr[left] != 0) {
                     left++;
                 }

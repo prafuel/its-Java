@@ -4,6 +4,31 @@ import java.util.Map;
 
 public class Two_sum {
 
+    public static int[] optimal(int[] arr, int target) {
+        // if arr is sorted initially
+        // just do binart search blindly
+
+        int l = 0;
+        int r = arr.length - 1;
+
+        while(l < r) {
+            int sum = arr[l] + arr[r];
+            if(sum == target) {
+                return new int[] {l,r};
+            }
+
+            else if(sum > target) {
+                r--;
+            }
+
+            else{
+                l++;
+            }
+        }
+
+        return new int[]{-1,-1};
+    }
+
     public static int[] better(int[] arr, int target) {
         int n = arr.length;
 
@@ -38,11 +63,12 @@ public class Two_sum {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 4, 8, 9, 3, 1, 2, 4 };
+        int[] arr = { 0,1,2,3,4,5 };
         int target = 8;
 
         // int[] ans = bruteForce_twoSum(arr, target);
-        int[] ans = better(arr, target);
+        // int[] ans = better(arr, target);
+        int[] ans = optimal(arr, target);
         // System.out.println(ans);
         for (int i : ans) {
             System.out.println(i);
