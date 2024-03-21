@@ -1,28 +1,19 @@
-import java.util.HashMap;
-import java.util.Map;
 
 public class Test {
     public static void main(String args[]) {
-        // [2,7,11,15], target = 9
+        int[] arr = {2,3,-9,6,-1,-2};
 
-        int[] arr = {2,7,11,15};
-        int n = arr.length;
-
-        int target = 9;
-
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for(int i = 0; i < n; i++) {
-            map.put(arr[i],i);
-        }
-
-        int i = 0;
-        for(int item : map.keySet()) {
-            int diff = target - item;
-            if(map.containsKey(diff) && map.get(diff) != i) {
-                System.out.println(i + " " + map.get(diff));
-                break;
+        int sum = 0;
+        int max = 0;
+        // kadan's algo
+        for(int i = 0; i < arr.length; i++) {
+            if(sum < 0){
+                sum = 0;
             }
-            i++;
-        }
+            max = Math.max(sum, max);
+            sum = sum + arr[i];
+        } 
+
+        System.out.println("Max Subset sum : " + max);
     }
 }
