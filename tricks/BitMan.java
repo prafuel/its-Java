@@ -21,6 +21,13 @@ public class BitMan{
     ans = setLastBitToSet | 1;
     System.out.println(ans);
 
-    // 
+    // swapping without using +,-,/,* operation or without using 3rd variable
+    // -> use xor
+    int a = 4;
+    int b = 2;
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    System.out.println("a = " + a + " b = " + b);
   }
 }
