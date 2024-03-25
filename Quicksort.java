@@ -13,6 +13,7 @@ public class Quicksort {
         int pivot = low;
 
         int left = low;
+        
         int right = high;
 
         while (left < right) {
